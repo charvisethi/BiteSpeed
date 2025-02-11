@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 require("dotenv").config(); // Ensure environment variables are loaded
 
 const dbURI = process.env.MONGO_URI; // Get MongoDB URI from environment variables
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 10000;
 
 const app = express();
 app.use(bodyParser.json());
