@@ -1,4 +1,3 @@
-# BiteSpeed
 # BiteSpeed Backend API
 
 ## Overview
