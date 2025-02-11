@@ -10,13 +10,12 @@ const app = express();
 app.use(bodyParser.json());
 
 // MongoDB Connection
-mongoose
-    .connect(dbURI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    })
-    .then(() => console.log("MongoDB connected successfully"))
-    .catch((err) => console.error("MongoDB connection error:", err));
+mongoose.connect(dbURI, {
+    serverSelectionTimeoutMS: 5000, // Optional: Avoid long waits on failure
+  })
+    .then(() => console.log("Connected to MongoDB"))
+    .catch(err => console.error("MongoDB connection error:", err));
+
 
 const ContactSchema = new mongoose.Schema({
     primaryContactId: { type: mongoose.Schema.Types.ObjectId, required: true, unique: true },
